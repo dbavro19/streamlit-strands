@@ -6,7 +6,7 @@ import os
 from datetime import datetime
 from strands import Agent
 from strands.models import BedrockModel
-from strands_tools import calculator
+from strands_tools import calculator, file_read
 
 # Set page config
 st.set_page_config(
@@ -143,7 +143,7 @@ if 'agent' not in st.session_state:
 
     # Create agent with your tools (replace with your actual tools)
     # Example tools - replace with your actual tool imports
-    tools = [calculator]  # Add your tools here: [tool1, tool2, tool3]
+    tools = [calculator, file_read]  # Add your tools here: [tool1, tool2, tool3]
     
     st.session_state.agent = Agent(
         tools=tools,
